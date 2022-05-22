@@ -1,5 +1,6 @@
 # Code to run test cases in Docker Containers
 import socket
+from ProjectModules.common_vars import HOST,PORT
 from  ProjectModules.ClientModules.client_modules import *
 
 def main():
