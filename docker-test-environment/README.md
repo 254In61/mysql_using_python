@@ -31,6 +31,13 @@ Step 2 : Edit the group_vars/all_vars.yml file to reflect your correct values.
 Step 3 : Fire off the test : $ ansible-playbook site.yml
 
 
+Troubleshooting
+===============
+- There are cases the containers fail to run the code despite tests being OK on your dev environment.
+- Could be a number of issues but most importantly, check if the code is updated on the git repo.
+  Could be a pending merging.
+
+
 Author
 ======
 Allan Maseghe

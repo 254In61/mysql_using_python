@@ -42,6 +42,8 @@ Containers
 - Check running top-level processes within a container : $ sudo docker top <CONTAINER ID>
 - Stop a running container : $ docker stop <CONTAINER ID>
 - Delete a container : $ docker rm ContainerID
+- Remove more than 1 in 1 line : $ docker stop docker_1 docker_2 docker_3 docker_4
+  The delete: $ docker rm docker_1 docker_2 docker_3 docker_4
 - ** Check lifecycle design at the bottom of the page : https://www.tutorialspoint.com/docker/docker_working_with_containers.htm
 
 - When you start a container with /bin/bash instance, the moment you exit, that container ceases to exist. But when you start the container to run a certain app/process, then it will stay up/persistent.
