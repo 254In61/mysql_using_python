@@ -1,0 +1,221 @@
+2022-05-22 23:47:24,166 p=2075903 u=amaseghe n=ansible | [WARNING]: Skipping callback plugin 'profile_tasks', unable to load
+
+2022-05-22 23:47:24,167 p=2075903 u=amaseghe n=ansible | PLAY [Run test on docker containers] *****************************************************************************************
+2022-05-22 23:47:24,176 p=2075903 u=amaseghe n=ansible | TASK [Calling on the variables in group_vars directory] **********************************************************************
+2022-05-22 23:47:24,189 p=2075903 u=amaseghe n=ansible | ok: [localhost]
+2022-05-22 23:47:24,194 p=2075903 u=amaseghe n=ansible | TASK [include_role : create-container] ***************************************************************************************
+2022-05-22 23:47:24,224 p=2075903 u=amaseghe n=ansible | TASK [create-container : Create 1st ubuntu container from the image ubuntu-nginx-ansible-host:latest] ************************
+2022-05-22 23:47:25,047 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=1)
+2022-05-22 23:47:25,670 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=2)
+2022-05-22 23:47:26,271 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=3)
+2022-05-22 23:47:26,886 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=4)
+2022-05-22 23:47:26,941 p=2075903 u=amaseghe n=ansible | TASK [include_role : run-container] ******************************************************************************************
+2022-05-22 23:47:26,964 p=2075903 u=amaseghe n=ansible | TASK [run-container : Clone mysql_using_python into the docker containers] ***************************************************
+2022-05-22 23:47:31,284 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=1)
+2022-05-22 23:47:35,587 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=2)
+2022-05-22 23:47:39,888 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=3)
+2022-05-22 23:47:44,182 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=4)
+2022-05-22 23:47:44,187 p=2075903 u=amaseghe n=ansible | TASK [run-container : Run client-for-ansible-hosts-test.py on remote device] *************************************************
+2022-05-22 23:47:44,427 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=1)
+2022-05-22 23:47:44,663 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=2)
+2022-05-22 23:47:44,877 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=3)
+2022-05-22 23:47:45,128 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=4)
+2022-05-22 23:47:45,133 p=2075903 u=amaseghe n=ansible | TASK [run-container : debug] *************************************************************************************************
+2022-05-22 23:47:45,151 p=2075903 u=amaseghe n=ansible | ok: [localhost] => {
+    "container_output": {
+        "changed": true,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": true,
+                "cmd": "docker exec docker_1 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                "delta": "0:00:00.098354",
+                "end": "2022-05-22 23:47:44.409434",
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "_raw_params": "docker exec docker_1 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                        "_uses_shell": true,
+                        "argv": null,
+                        "chdir": null,
+                        "creates": null,
+                        "executable": null,
+                        "removes": null,
+                        "stdin": null,
+                        "stdin_add_newline": true,
+                        "strip_empty_ends": true,
+                        "warn": false
+                    }
+                },
+                "item": "1",
+                "msg": "",
+                "rc": 0,
+                "start": "2022-05-22 23:47:44.311080",
+                "stderr": "",
+                "stderr_lines": [],
+                "stdout": "country_name:Kenya\n{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}\ncapitol:Washington\n{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}\nhead_of_state:Suluhu\n{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}",
+                "stdout_lines": [
+                    "country_name:Kenya",
+                    "{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}",
+                    "capitol:Washington",
+                    "{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}",
+                    "head_of_state:Suluhu",
+                    "{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}"
+                ]
+            },
+            {
+                "ansible_loop_var": "item",
+                "changed": true,
+                "cmd": "docker exec docker_2 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                "delta": "0:00:00.104276",
+                "end": "2022-05-22 23:47:44.646218",
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "_raw_params": "docker exec docker_2 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                        "_uses_shell": true,
+                        "argv": null,
+                        "chdir": null,
+                        "creates": null,
+                        "executable": null,
+                        "removes": null,
+                        "stdin": null,
+                        "stdin_add_newline": true,
+                        "strip_empty_ends": true,
+                        "warn": false
+                    }
+                },
+                "item": "2",
+                "msg": "",
+                "rc": 0,
+                "start": "2022-05-22 23:47:44.541942",
+                "stderr": "",
+                "stderr_lines": [],
+                "stdout": "country_name:Kenya\n{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}\ncapitol:Washington\n{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}\nhead_of_state:Suluhu\n{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}",
+                "stdout_lines": [
+                    "country_name:Kenya",
+                    "{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}",
+                    "capitol:Washington",
+                    "{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}",
+                    "head_of_state:Suluhu",
+                    "{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}"
+                ]
+            },
+            {
+                "ansible_loop_var": "item",
+                "changed": true,
+                "cmd": "docker exec docker_3 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                "delta": "0:00:00.083751",
+                "end": "2022-05-22 23:47:44.859159",
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "_raw_params": "docker exec docker_3 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                        "_uses_shell": true,
+                        "argv": null,
+                        "chdir": null,
+                        "creates": null,
+                        "executable": null,
+                        "removes": null,
+                        "stdin": null,
+                        "stdin_add_newline": true,
+                        "strip_empty_ends": true,
+                        "warn": false
+                    }
+                },
+                "item": "3",
+                "msg": "",
+                "rc": 0,
+                "start": "2022-05-22 23:47:44.775408",
+                "stderr": "",
+                "stderr_lines": [],
+                "stdout": "country_name:Kenya\n{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}\ncapitol:Washington\n{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}\nhead_of_state:Suluhu\n{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}",
+                "stdout_lines": [
+                    "country_name:Kenya",
+                    "{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}",
+                    "capitol:Washington",
+                    "{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}",
+                    "head_of_state:Suluhu",
+                    "{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}"
+                ]
+            },
+            {
+                "ansible_loop_var": "item",
+                "changed": true,
+                "cmd": "docker exec docker_4 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                "delta": "0:00:00.113861",
+                "end": "2022-05-22 23:47:45.106428",
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "_raw_params": "docker exec docker_4 python3 mysql_using_python/client-for-ansible-hosts-test.py",
+                        "_uses_shell": true,
+                        "argv": null,
+                        "chdir": null,
+                        "creates": null,
+                        "executable": null,
+                        "removes": null,
+                        "stdin": null,
+                        "stdin_add_newline": true,
+                        "strip_empty_ends": true,
+                        "warn": false
+                    }
+                },
+                "item": "4",
+                "msg": "",
+                "rc": 0,
+                "start": "2022-05-22 23:47:44.992567",
+                "stderr": "",
+                "stderr_lines": [],
+                "stdout": "country_name:Kenya\n{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}\ncapitol:Washington\n{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}\nhead_of_state:Suluhu\n{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}",
+                "stdout_lines": [
+                    "country_name:Kenya",
+                    "{\"country\": \"Kenya\", \"capitol\": \"Nairobi\", \"population\": 60, \"head_of_state\": \"Uhuru\"}",
+                    "capitol:Washington",
+                    "{\"country\": \"USA\", \"capitol\": \"Washington\", \"population\": 365, \"head_of_state\": \"Biden\"}",
+                    "head_of_state:Suluhu",
+                    "{\"country\": \"Tanzania\", \"capitol\": \"Dar\", \"population\": 65, \"head_of_state\": \"Suluhu\"}"
+                ]
+            }
+        ],
+        "skipped": false
+    }
+}
+2022-05-22 23:47:45,158 p=2075903 u=amaseghe n=ansible | TASK [include_role : destroy-container] **************************************************************************************
+2022-05-22 23:47:45,192 p=2075903 u=amaseghe n=ansible | TASK [destroy-container : Stop docker containers] ****************************************************************************
+2022-05-22 23:47:45,780 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=1)
+2022-05-22 23:47:46,298 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=2)
+2022-05-22 23:47:46,793 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=3)
+2022-05-22 23:47:47,305 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=4)
+2022-05-22 23:47:47,311 p=2075903 u=amaseghe n=ansible | TASK [destroy-container : Remove docker containers] **************************************************************************
+2022-05-22 23:47:47,859 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=1)
+2022-05-22 23:47:48,480 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=2)
+2022-05-22 23:47:49,087 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=3)
+2022-05-22 23:47:49,640 p=2075903 u=amaseghe n=ansible | changed: [localhost] => (item=4)
+2022-05-22 23:47:49,648 p=2075903 u=amaseghe n=ansible | PLAY RECAP *******************************************************************************************************************
+2022-05-22 23:47:49,648 p=2075903 u=amaseghe n=ansible | localhost                  : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-23 00:22:27,788 p=2082232 u=amaseghe n=ansible | [WARNING]: Skipping callback plugin 'profile_tasks', unable to load
+
+2022-05-23 00:22:27,789 p=2082232 u=amaseghe n=ansible | PLAY [Run test on docker containers] *******************************************************************************
+2022-05-23 00:22:27,797 p=2082232 u=amaseghe n=ansible | TASK [Calling on the variables in group_vars directory] ************************************************************
+2022-05-23 00:22:27,809 p=2082232 u=amaseghe n=ansible | ok: [localhost]
+2022-05-23 00:22:27,812 p=2082232 u=amaseghe n=ansible | TASK [include_role : create-container] *****************************************************************************
+2022-05-23 00:22:27,840 p=2082232 u=amaseghe n=ansible | TASK [create-container : Create 1st ubuntu container from the image ubuntu-nginx-ansible-host:latest] **************
+2022-05-23 00:22:28,596 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=1)
+2022-05-23 00:22:29,222 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=2)
+2022-05-23 00:22:29,862 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=3)
+2022-05-23 00:22:30,525 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=4)
+2022-05-23 00:22:30,535 p=2082232 u=amaseghe n=ansible | TASK [include_role : run-container] ********************************************************************************
+2022-05-23 00:22:30,560 p=2082232 u=amaseghe n=ansible | TASK [run-container : Clone mysql_using_python into the docker containers] *****************************************
+2022-05-23 00:22:34,920 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=1)
+2022-05-23 00:22:39,406 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=2)
+2022-05-23 00:22:44,028 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=3)
+2022-05-23 00:22:48,171 p=2082232 u=amaseghe n=ansible | changed: [localhost] => (item=4)
+2022-05-23 00:22:48,176 p=2082232 u=amaseghe n=ansible | TASK [run-container : Run client-for-ansible-hosts-test.py on remote device] ***************************************
+2022-05-23 00:22:48,444 p=2082232 u=amaseghe n=ansible | failed: [localhost] (item=1) => {"ansible_loop_var": "item", "changed": true, "cmd": "docker exec docker_1 python3 mysql_using_python/client-for-ansible-hosts-test.py", "delta": "0:00:00.101020", "end": "2022-05-23 00:22:48.425255", "item": "1", "msg": "non-zero return code", "rc": 1, "start": "2022-05-23 00:22:48.324235", "stderr": "Traceback (most recent call last):\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>\n    main()\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main\n    client_socket.connect((HOST, PORT))\nConnectionRefusedError: [Errno 111] Connection refused", "stderr_lines": ["Traceback (most recent call last):", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>", "    main()", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main", "    client_socket.connect((HOST, PORT))", "ConnectionRefusedError: [Errno 111] Connection refused"], "stdout": "country_name:Kenya", "stdout_lines": ["country_name:Kenya"]}
+2022-05-23 00:22:48,682 p=2082232 u=amaseghe n=ansible | failed: [localhost] (item=2) => {"ansible_loop_var": "item", "changed": true, "cmd": "docker exec docker_2 python3 mysql_using_python/client-for-ansible-hosts-test.py", "delta": "0:00:00.100285", "end": "2022-05-23 00:22:48.665048", "item": "2", "msg": "non-zero return code", "rc": 1, "start": "2022-05-23 00:22:48.564763", "stderr": "Traceback (most recent call last):\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>\n    main()\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main\n    client_socket.connect((HOST, PORT))\nConnectionRefusedError: [Errno 111] Connection refused", "stderr_lines": ["Traceback (most recent call last):", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>", "    main()", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main", "    client_socket.connect((HOST, PORT))", "ConnectionRefusedError: [Errno 111] Connection refused"], "stdout": "country_name:Kenya", "stdout_lines": ["country_name:Kenya"]}
+2022-05-23 00:22:48,909 p=2082232 u=amaseghe n=ansible | failed: [localhost] (item=3) => {"ansible_loop_var": "item", "changed": true, "cmd": "docker exec docker_3 python3 mysql_using_python/client-for-ansible-hosts-test.py", "delta": "0:00:00.089332", "end": "2022-05-23 00:22:48.890041", "item": "3", "msg": "non-zero return code", "rc": 1, "start": "2022-05-23 00:22:48.800709", "stderr": "Traceback (most recent call last):\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>\n    main()\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main\n    client_socket.connect((HOST, PORT))\nConnectionRefusedError: [Errno 111] Connection refused", "stderr_lines": ["Traceback (most recent call last):", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>", "    main()", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main", "    client_socket.connect((HOST, PORT))", "ConnectionRefusedError: [Errno 111] Connection refused"], "stdout": "country_name:Kenya", "stdout_lines": ["country_name:Kenya"]}
+2022-05-23 00:22:49,130 p=2082232 u=amaseghe n=ansible | failed: [localhost] (item=4) => {"ansible_loop_var": "item", "changed": true, "cmd": "docker exec docker_4 python3 mysql_using_python/client-for-ansible-hosts-test.py", "delta": "0:00:00.096017", "end": "2022-05-23 00:22:49.117747", "item": "4", "msg": "non-zero return code", "rc": 1, "start": "2022-05-23 00:22:49.021730", "stderr": "Traceback (most recent call last):\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>\n    main()\n  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main\n    client_socket.connect((HOST, PORT))\nConnectionRefusedError: [Errno 111] Connection refused", "stderr_lines": ["Traceback (most recent call last):", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 38, in <module>", "    main()", "  File \"//mysql_using_python/client-for-ansible-hosts-test.py\", line 33, in main", "    client_socket.connect((HOST, PORT))", "ConnectionRefusedError: [Errno 111] Connection refused"], "stdout": "country_name:Kenya", "stdout_lines": ["country_name:Kenya"]}
+2022-05-23 00:22:49,133 p=2082232 u=amaseghe n=ansible | PLAY RECAP *********************************************************************************************************
+2022-05-23 00:22:49,133 p=2082232 u=amaseghe n=ansible | localhost                  : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
