@@ -2,9 +2,6 @@
 import socket
 import json
 
-HOST = '192.168.1.111' # Server's IP address..Can be resolved using gethostbyname() if using DNS.
-PORT = 50003   # Arbitrary non-privileged port
-
 class Chat():
     """
     Class that handles chat.
