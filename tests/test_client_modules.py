@@ -2,23 +2,54 @@
 
 import socket
 import pytest
-from ProjectModules.ClientModules.client_modules import *
+from common_vars import HOST,PORT
+from ClientModules.client_modules import *
 
 # Test CreateQuery class
 
-def test_client_CreateQuery_country_name():
+def test_client_create_query_country_name():
     # Testing create_query() function
-    assert CreateQuery("1","Kenya").get_string() == "country_name:Kenya"
+    table_name = "countries:"
+    column_id = "country_name:"
+    search_name = "KeNYa"
+    assert create_query(table_name,column_id,search_name) == "countries:country_name:Kenya"
 
-def test_client_CreateQuery_capitol():
+def test_client_create_query_country_name_Error():
     # Testing create_query() function
-    assert CreateQuery("2","Dar").get_string() == "capitol:Dar"
+    table_name = "countries:"
+    column_id = "country_name:"
+    search_name = "z45yy"
+    assert create_query(table_name,column_id,search_name) == "countries:country_name:Z45yy" #value to be capitalized
 
-def test_client_CreateQuery_head_of_state():
+def test_client_create_query_capitol():
     # Testing create_query() function
-    assert CreateQuery("3","Biden").get_string() == "head_of_state:Biden"
+    table_name = "countries:"
+    column_id = "capitol:"
+    search_name = "DaR"
+    assert create_query(table_name,column_id,search_name) == "countries:capitol:Dar"
 
-# Test Chat class
+def test_client_create_query_capitol_Error():
+    # Testing create_query() function
+    table_name = "countries:"
+    column_id = "capitol:"
+    search_name = "vv892v7"
+    assert create_query(table_name,column_id,search_name) == "countries:capitol:Vv892v7" # Value to be capitalized
+
+def test_client_create_query_head_of_state():
+    # Testing create_query() function
+    table_name = "countries:"
+    column_id = "head_of_state:"
+    search_name = "BIDEN"
+    assert create_query(table_name,column_id,search_name) == "countries:head_of_state:Biden"
+
+def test_client_create_query_head_of_state_Error():
+    # Testing create_query() function
+    table_name = "countries:"
+    column_id = "head_of_state:"
+    search_name = "ue78uyu"
+    assert create_query(table_name,column_id,search_name) == "countries:head_of_state:Ue78uyu" # Value to be capitalized
+
+
 # Helper
 def create_socket():
     """
@@ -29,21 +60,34 @@ def create_socket():
     client_socket.connect((HOST, PORT))
     return client_socket
 
-# Test Cases
-
 def test_client_Chat_country_name():
     # Test Country search
-    client_socket = create_socket()
-    assert Chat("country_name:Tanzania",client_socket).messaging() == '{"country": "Tanzania", "capitol": "Dar", "population": 65, "head_of_state": "Suluhu"}'
+    query = "countries:country_name:Kenya"
+    assert Chat(query,create_socket()).messaging() == '["Kenya", "Nairobi", 60, "Uhuru"]'
+
+def test_client_Chat_country_name_Error():
+    # Test Country search
+    query = "countries:country_name:y78wus"
+    assert Chat(query,create_socket()).messaging() == 'ERROR.No data present'
 
 def test_client_Chat_capitol():
-    # Test Country search
-    client_socket = create_socket()
-    assert Chat("capitol:Nairobi",client_socket).messaging() == '{"country": "Kenya", "capitol": "Nairobi", "population": 60, "head_of_state": "Uhuru"}'
+    # Test capitol search
+    query = "countries:capitol:Nairobi"
+    assert Chat(query,create_socket()).messaging() == '["Kenya", "Nairobi", 60, "Uhuru"]'
+
+def test_client_Chat_capitol_Error():
+    # Test capitol search
+    query = "countries:capitol:yu9s0w"
+    assert Chat(query,create_socket()).messaging() == 'ERROR.No data present'
 
 def test_client_Chat_head_of_state():
-    # Test Country search
-    client_socket = create_socket()
-    assert Chat("head_of_state:Biden",client_socket).messaging() == '{"country": "USA", "capitol": "Washington", "population": 365, "head_of_state": "Biden"}'
+    # Test head_of_state search
+    query = "countries:head_of_state:Biden"
+    assert Chat(query,create_socket()).messaging() == '["USA", "Washington", 365, "Biden"]'
+
+def test_client_Chat_head_of_state():
+    # Test head_of_state search
+    query = "countries:head_of_state:ut921ms"
+    assert Chat(query,create_socket()).messaging() == 'ERROR.No data present'
 
 

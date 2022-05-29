@@ -4,7 +4,8 @@
 # Optimize with multithreading to handle more than one client querries
 
 import socket
-from ProjectModules.ServerModules.server_modules import *
+from ServerModules.server_modules import *
+from common_vars import *
 
 def main():
     """
