@@ -42,7 +42,7 @@ def main():
 
                 search_name = input("Key in name[country,capitol or head of state] : ")
                 print(Chat(create_query(table_name,column_id,search_name),client_socket).messaging())
-            
+
 
 if __name__ == "__main__":
     main()
