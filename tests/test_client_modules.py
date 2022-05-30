@@ -9,43 +9,43 @@ from ClientModules.client_modules import *
 
 def test_client_create_query_country_name():
     # Testing create_query() function
-    table_name = "countries:"
-    column_id = "country_name:"
+    table_name = "countries"
+    column_id = "country_name"
     search_name = "KeNYa"
     assert create_query(table_name,column_id,search_name) == "countries:country_name:Kenya"
 
 def test_client_create_query_country_name_Error():
     # Testing create_query() function
-    table_name = "countries:"
-    column_id = "country_name:"
+    table_name = "countries"
+    column_id = "country_name"
     search_name = "z45yy"
     assert create_query(table_name,column_id,search_name) == "countries:country_name:Z45yy" #value to be capitalized
 
 def test_client_create_query_capitol():
     # Testing create_query() function
-    table_name = "countries:"
-    column_id = "capitol:"
+    table_name = "countries"
+    column_id = "capitol"
     search_name = "DaR"
     assert create_query(table_name,column_id,search_name) == "countries:capitol:Dar"
 
 def test_client_create_query_capitol_Error():
     # Testing create_query() function
-    table_name = "countries:"
-    column_id = "capitol:"
+    table_name = "countries"
+    column_id = "capitol"
     search_name = "vv892v7"
     assert create_query(table_name,column_id,search_name) == "countries:capitol:Vv892v7" # Value to be capitalized
 
 def test_client_create_query_head_of_state():
     # Testing create_query() function
-    table_name = "countries:"
-    column_id = "head_of_state:"
+    table_name = "countries"
+    column_id = "head_of_state"
     search_name = "BIDEN"
     assert create_query(table_name,column_id,search_name) == "countries:head_of_state:Biden"
 
 def test_client_create_query_head_of_state_Error():
     # Testing create_query() function
-    table_name = "countries:"
-    column_id = "head_of_state:"
+    table_name = "countries"
+    column_id = "head_of_state"
     search_name = "ue78uyu"
     assert create_query(table_name,column_id,search_name) == "countries:head_of_state:Ue78uyu" # Value to be capitalized
 

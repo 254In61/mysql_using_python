@@ -19,7 +19,7 @@ class Chat():
         return query_result
 
 def create_query(table_name,column_id,search_name):
-    return table_name + column_id + search_name.capitalize()
+    return table_name + ":" + column_id + ":" + search_name.capitalize()
 
      
     

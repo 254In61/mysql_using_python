@@ -1,6 +1,6 @@
 # Testing DataBaseQuery module
 from ProjectModules.ServerModules.server_modules import *
-
+from ProjectModules.common_vars import HOST,PORT
 
 # Test DataBaseQuery Cases
 
