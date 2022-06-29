@@ -1,4 +1,9 @@
+import socket
+import json
+
 # Client re-usable modules
+HOST = '192.168.1.92' # Server's IP address..Can be resolved using gethostbyname() if using DNS.
+PORT = 50055   # Arbitrary non-privileged port
 class Chat():
     """
     Class that handles chat.
@@ -18,8 +23,16 @@ class Chat():
         query_result = self.client_socket.recv(1024).decode("utf-8")
         return query_result
 
-def create_query(table_name,column_id,search_name):
-    return table_name + ":" + column_id + ":" + search_name.capitalize()
+def perform_query(query):
+
+    print("Query : ",query)
+
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect((HOST, PORT))
+
+    return Chat(query,client_socket).messaging()
+
+    
 
      
     

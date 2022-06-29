@@ -1,31 +1,34 @@
-OVERVIEW
+Overview
 ========
-Project's end goal is to enable querries by devices to the MySQL DB.
+- Tool made up of 3 main parts.
+- 1) Database : MySQL Database with a table called "countries"
+- 2) Server script : Script that runs within the DB Server , which perfoms SQL querries to the DB.
+- 3) client end : Client script picks options, and sends a string over the network socket to a listening server. Server translates the string into an SQL query.
+- Design obsifucates the SQL Server to external environment.
 
-DESIGN
-======
-server side
------------
-- DB is hosted by a MySQL Server.
-- There's a python script, server.py, that is constantly "on" on the server side.
-- Server script creates a server socket that listens to incoming connections and messages.
-- Based on the in-string, server perfoms a MySQL DB query using the mysql-connector api to querry the server.
-- Server sends back response in a JSON String format to the client.
+testing
+=====
+1) Unittests
+-------------
+- pytest is used to unit-test the client function which calls on all other functions and classes.No unittesting of server modules.
 
-client side
------------
-- Client runs a script client.py
-- Client creates a socket and connects to the server.
-- Based on the user input, client side creates a string with specific pattern and sends it over to the server.
-- Server responds with a JSON string query results.
+2) Integration testing
+----------------------
+- Workflow created in Jenkins server
+- Workflow runs the unittest first and when all is good, integration tests next.
+- Integration tests are done using Docker containers to simulate customers, who then run a client script with pre-defined data.
 
-TESTING
-========
-- Test cases found in the tests/ directory.
-- They are run from the run-unittest bash script.
-
-
-AUTHOR
+docker
 =======
-Allan Maseghe
+- A ready docker image built as per the Dockerfile attached.
+- Docker images are created , script run and then destroyed, all within the ansible script, site.yml.
 
+How to Use
+==========
+- Set environmental variables for that specific subshell i.e MYSQL_USER & MYSQL_PASSWORD
+- Start the server with server.py
+
+
+Author
+======
+254in61
