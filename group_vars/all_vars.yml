@@ -4,7 +4,7 @@
 # Docker container details for testing
 number_of_containers: 4
 container_common_name: docker
-ubuntu_image: ubuntu-nginx-ansible-host:latest
+ubuntu_image: ubuntu:latest
 
 # Copy app from localhost to containers
 # Developer to change this accordingly while developing code
